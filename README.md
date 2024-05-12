@@ -50,10 +50,15 @@ The extracted text content from the PDF resume will be displayed on the webpage.
 
 pdf-resume-parser/
 ├── app.py
+
 ├── requirements.txt
+
 ├── templates/
+
 │   ├── result.html
+
 │   └── upload.html
+
 └── uploads/
 
 ## Contributing
