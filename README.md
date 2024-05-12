@@ -46,21 +46,6 @@ Click the "Choose File" button and select a PDF resume from your local file syst
 Click the "Submit" button to upload the file.
 The extracted text content from the PDF resume will be displayed on the webpage.
 
-## File Structure
-
-pdf-resume-parser/
-├── app.py
-
-├── requirements.txt
-
-├── templates/
-
-│   ├── result.html
-
-│   └── upload.html
-
-└── uploads/
-
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
