@@ -3,11 +3,49 @@
 <head>
     <title>Resume Parser</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .filupp {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            background-color: #f8f8f8;
+            border: 2px solid #d3d3d3;
+            border-radius: 5px;
+            padding: 4px 12px;
+        }
+        .filupp:hover {
+            background-color: #e8e8e8;
+        }
+        .filupp-file-name {
+            margin: 0;
+            vertical-align: middle;
+        }
+        .filupp input[type='file'] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            var fileInput = document.getElementById('custom-file-upload');
+            var fileNameContainer = document.querySelector('.filupp-file-name');
+            fileInput.addEventListener('change', function(){
+                var fileName = fileInput.files[0] ? fileInput.files[0].name : "Browse Files";
+                fileNameContainer.textContent = fileName;
+            });
+        });
+    </script>
 </head>
 <body>
     <h1>Upload a PDF file</h1>
     <form action="/" method="post" enctype="multipart/form-data">
-        <input type="file" name="file">
+        <label for="custom-file-upload" class="filupp">
+            <span class="filupp-file-name js-value">Browse Files</span>
+            <input type="file" name="file" id="custom-file-upload"/>
+        </label>
         <input type="submit" value="Upload">
     </form>
 </body>
